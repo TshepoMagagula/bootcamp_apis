@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="methods.js"></script>
+    <script type="./module" src="index.js"></script>
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Bootcamp APIs</h1>
+    </div>
+    <div class="main" x-data="bootcampAPIWidgets">
+        <div class="row">
+            <div class="col">
+                <div class="enoughAirtime">
+                    <h2>Enough Airtime API</h2>
+                    <div style="margin-bottom: 1em;">
+                        <span>Remaining Balance: </span>
+                        <span x-text="remainingBalance" style="background-color:gray; font-weight: bolder;
+                         margin: 1em; padding: 0.2em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"></span>
+                    </div>
+                    <div>
+                        <span>Usage: </span>
+                    <input type="text" placeholder="Enter your usage" x-model="usage"
+                    style="margin-top: 0.5em; margin-bottom: 1em; width: 79%;">
+                    </div>
+                    <span>Available Airtime Balance: </span>
+                    <input type="text" placeholder="Enter Airtime balance" x-model="airtime"
+                    style="margin-top: 0.5em; margin-bottom: 1em;">
+                    <br>
+                    <button @click="showRemainingBalance();">Get Remaining Balance</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="wordGame">
+                <h2>WordGame Bootcamp Function</h2>
+                Enter Your Sentence: <input type="text" 
+                placeholder="Enter your sentence" x-model="sentence">
+                <div>
+                    <div style="background-color:gray; font-weight: bolder; margin-bottom: 1em; 
+                    padding: 0.5em; margin-top: 0.5em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"
+                    x-text="longestWrd"></div>
+                    <button @click="getLongestWord();">Get Longest Word</button>
+                </div>
+                <div>
+                    <div style="background-color:gray; font-weight: bolder; margin-bottom: 1em; 
+                    padding: 0.5em; margin-top: 0.5em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"
+                    x-text="shortestWrd"></div>
+                    <button @click="getShortestWord();">Get shortest Word</button>
+                </div>
+                <div>
+                    <div style="background-color:gray; font-weight: bolder; margin-bottom: 1em; 
+                    padding: 0.5em; margin-top: 0.5em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"
+                     x-text="wrdLengths"></div>
+                    <button @click="getSumOfWords();">Get sum of words</button>
+                </div>   
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="phoneBill">
+                    <h2>Total Phone Bill API</h2>
+                    <div style="margin-bottom: 1em;">
+                        <span>Total Phone Bill: </span>
+                        <span x-text="totalPhoneBill" style="background-color:gray; font-weight: bolder;
+                         margin: 1em; padding: 0.2em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"></span>
+                    </div>
+                    <div>
+                        <span>Bill: </span>
+                    <input type="text" placeholder="Enter your usage e.g sms,data,sms..." x-model="bill"
+                    style="margin-top: 0.5em; margin-bottom: 1em; width: 79%;">
+                    </div>
+                    <button @click="showTotalPhoneBill();">Total Phone Bill</button>
+                    <hr>
+                    <h3>Prices</h3>
+                    <div style="margin-bottom: 1em;">
+                        <span>Call cost price: </span>
+                        <span x-text="callCost" style="background-color:gray; font-weight: bolder;
+                        margin: 1em; padding: 0.2em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"></span>
+                        <br>
+                        <div style="margin-top: 1em;">
+                            <span>sms cost price: </span>
+                            <span x-text="smsCost" style="background-color:gray; font-weight: bolder;
+                            margin: 1em; padding: 0.2em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"></span>
+                        </div>
+                    </div>
+                    <button @click="showPrices();">View Current Prices</button>
+                    <hr>
+                    <h4>Change Prices</h4>
+                    <span>Type: </span>
+                    <input type="text" placeholder="sms or call" x-model="type"
+                    style="margin-top: 0.5em; margin-bottom: 1em;">
+                    <br>
+                    <span>price: </span>
+                    <input type="text" placeholder="Enter new cost amount" x-model="newPrice"
+                    style="margin-top: 0.5em; margin-bottom: 1em;">
+                    <br>
+                    <button @click="changePrice">Change</button>
+                </div>
+            </div>
+        </div>    
+    </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+GET http://localhost:3008/api/word_game?sentence=Same old, just a different day
+
+###
+GET http://localhost:3008/api/totalPhoneBill?bill=sms,call,sms,call
+
+###
+POST http://localhost:3008/api/enough
+Content-Type: application/json
+
+{
+    "usage": "call,sms,call",
+    "available" : 54
+}
+
+###
+POST http://localhost:3008/api/phoneBill/total
+Content-Type: application/json
+
+{
+    "bill": "call,sms,call"
+}
+
+###
+GET http://localhost:3008/api/phonebill/prices
+
+###
+POST http://localhost:3008/api/phoneBill/price
+Content-Type: application/json
+
+{
+    "type" : "sms",
+    "price" : 2.85
+}
