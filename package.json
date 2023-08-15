@@ -25,7 +25,8 @@
   "contributors": [],
   "scripts": {
     "dev": "",
-    "test": ""
+    "start": "node index.js",
+    "test": "mocha"
   },
   "dependencies": {
     "cors": "^2.8.5",
