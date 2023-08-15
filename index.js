@@ -1,8 +1,8 @@
 import express from 'express';
 import cors from 'cors';
-import {totalPhoneBill} from './TotalPhoneBill.js';
-import {enoughAirtime} from './enoughAirtime.js'; 
-import {shortestWord, longestWord, wordLengths} from './wordGame.js';
+import {totalPhoneBill} from './bootcamp_functions/TotalPhoneBill';
+import {enoughAirtime} from './bootcamp_functions/enoughAirtime'; 
+import {shortestWord, longestWord, wordLengths} from './bootcamp_functions/wordGame';
 
 const app = express();
 app.use(express.json());
