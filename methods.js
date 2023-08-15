@@ -16,6 +16,7 @@ document.addEventListener("alpine:init", () => {
             callCost: 0,
             type: '',
             newPrice: 0,
+            message: '',
 
             getLongestWord(){
                 const analyseSentenceURL = `http://localhost:3008/api/word_game?sentence=${this.sentence}`;
@@ -78,8 +79,12 @@ document.addEventListener("alpine:init", () => {
                 return axios.post('http://localhost:3008/api/phoneBill/price', {
                     "type" : this.type,
                     "price" : this.newPrice
+                }).then(result => {
+                    this.message = result.data.message;
                 })
-            }
+            },
+
+            
         }
     })
 })

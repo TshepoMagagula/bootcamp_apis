@@ -35,7 +35,14 @@
                     <input type="text" placeholder="Enter Airtime balance" x-model="airtime"
                     style="margin-top: 0.5em; margin-bottom: 1em;">
                     <br>
-                    <button @click="showRemainingBalance();">Get Remaining Balance</button>
+                    <button @click="showRemainingBalance();
+                    setInterval(function(){
+                        if(remainingBalance != 0){
+                            remainingBalance = 0;
+                            usage = '';
+                            airtime = 0;
+                        }
+                    }, 5000)">Get Remaining Balance</button>
                 </div>
             </div>
             <div class="col">
@@ -59,7 +66,15 @@
                     <div style="background-color:gray; font-weight: bolder; margin-bottom: 1em; 
                     padding: 0.5em; margin-top: 0.5em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"
                      x-text="wrdLengths"></div>
-                    <button @click="getSumOfWords();">Get sum of words</button>
+                    <button @click="getSumOfWords();
+                    setInterval(function(){
+                        if(wrdLengths != 0){
+                            sentence = '';
+                            wrdLengths = 0;
+                            longestWrd = '';
+                            shortestWrd = '';
+                        }
+                    }, 5000)">Get sum of words</button>
                 </div>   
                 </div>
             </div>
@@ -78,7 +93,13 @@
                     <input type="text" placeholder="Enter your usage e.g sms,data,sms..." x-model="bill"
                     style="margin-top: 0.5em; margin-bottom: 1em; width: 79%;">
                     </div>
-                    <button @click="showTotalPhoneBill();">Total Phone Bill</button>
+                    <button @click="showTotalPhoneBill();
+                    setInterval(function(){
+                        if(totalPhoneBill != 0){
+                            totalPhoneBill = 0;
+                            bill = '';
+                        }
+                    }, 5000)">Total Phone Bill</button>
                     <hr>
                     <h3>Prices</h3>
                     <div style="margin-bottom: 1em;">
@@ -92,9 +113,19 @@
                             margin: 1em; padding: 0.2em; border-radius: 0.5em; color: rgba(56, 56, 197, 0.829);"></span>
                         </div>
                     </div>
-                    <button @click="showPrices();">View Current Prices</button>
+                    <button @click="showPrices();
+                    setInterval(function(){
+                        if(callCost != 0){
+                            callCost = 0;
+                            smsCost = 0;
+                        }
+                    }, 5000)">View Current Prices</button>
                     <hr>
                     <h4>Change Prices</h4>
+                    <div style="margin-bottom: 1em;">
+                        <span x-text="message" style="background-color:gray; font-weight: bolder;
+                        margin: 1em; padding: 0.2em; border-radius: 0.5em; color: green;"></span>
+                    </div>     
                     <span>Type: </span>
                     <input type="text" placeholder="sms or call" x-model="type"
                     style="margin-top: 0.5em; margin-bottom: 1em;">
@@ -103,7 +134,14 @@
                     <input type="text" placeholder="Enter new cost amount" x-model="newPrice"
                     style="margin-top: 0.5em; margin-bottom: 1em;">
                     <br>
-                    <button @click="changePrice">Change</button>
+                    <button @click="changePrice();
+                    setInterval(function(){
+                        if(newPrice != 0){
+                            newPrice = 0;
+                            type = '';
+                            message = ''
+                        }
+                    }, 5000)">Change</button>
                 </div>
             </div>
         </div>    
