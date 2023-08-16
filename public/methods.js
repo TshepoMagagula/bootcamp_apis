@@ -17,31 +17,30 @@ document.addEventListener("alpine:init", () => {
             type: '',
             newPrice: 0,
             message: '',
-            baseUrl:'https://bootcamp-apis-o6lh.onrender.com',
 
             getLongestWord(){
-                const analyseSentenceURL = `${this.baseUrl}/api/word_game?sentence=${this.sentence}`;
+                const analyseSentenceURL = `/api/word_game?sentence=${this.sentence}`;
                 return axios.get(analyseSentenceURL).then(result => {
                     this.longestWrd = result.data.longestWord;
                 })
             },
 
             getShortestWord(){
-                const analyseSentenceURL = `${this.baseUrl}/api/word_game?sentence=${this.sentence}`;
+                const analyseSentenceURL = `/api/word_game?sentence=${this.sentence}`;
                 return axios.get(analyseSentenceURL).then(result => {
                     this.shortestWrd = result.data.shortestWord;
                 })
             },
             
             getSumOfWords(){
-                const analyseSentenceURL = `${this.baseUrl}/api/word_game?sentence=${this.sentence}`;
+                const analyseSentenceURL = `/api/word_game?sentence=${this.sentence}`;
                 return axios.get(analyseSentenceURL).then(result => {
                     this.wrdLengths = result.data.wordLengths;
                 })
             },
 
             getRemainingBalance() {
-                return axios.post('${this.baseUrl}/api/enough', {
+                return axios.post('/api/enough', {
                     "usage": this.usage,
                     "available" : this.airtime
                 })
@@ -57,7 +56,7 @@ document.addEventListener("alpine:init", () => {
             },
 
             getTotalPhoneBill() {
-                return axios.post('${this.baseUrl}/api/phoneBill/total', {
+                return axios.post('/api/phoneBill/total', {
                     "bill": this.bill
                 })
             },
@@ -69,7 +68,7 @@ document.addEventListener("alpine:init", () => {
             },
             
             showPrices(){
-                const analyseSentenceURL = '${this.baseUrl}/api/phonebill/prices';
+                const analyseSentenceURL = '/api/phonebill/prices';
                 return axios.get(analyseSentenceURL).then(result => {
                     this.smsCost = result.data.sms;
                     this.callCost = result.data.call;
@@ -77,7 +76,7 @@ document.addEventListener("alpine:init", () => {
             },
 
             changePrice(){
-                return axios.post('${this.baseUrl}/api/phoneBill/price', {
+                return axios.post('/api/phoneBill/price', {
                     "type" : this.type,
                     "price" : this.newPrice
                 }).then(result => {

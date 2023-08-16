@@ -1,7 +1,7 @@
 GET http://localhost:3008/api/word_game?sentence=Same old, just a different day
 
 ###
-GET http://localhost:3008/api/totalPhoneBill?bill=sms,call,sms,call
+GET https://bootcamp-apis-o6lh.onrender.com/api/totalPhoneBill?bill=sms,call,sms,call
 
 ###
 POST http://localhost:3008/api/enough
@@ -21,7 +21,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:3008/api/phonebill/prices
+GET https://bootcamp-apis-o6lh.onrender.com/api/phonebill/prices
 
 ###
 POST http://localhost:3008/api/phoneBill/price
