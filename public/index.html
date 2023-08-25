@@ -122,7 +122,7 @@
                     <hr>
                     <h4>Change Prices</h4>
                     <div style="margin-bottom: 1em;">
-                        <span x-text="message" style="background-color:gray; font-weight: bolder;
+                        <span x-text="message" style="background-color:white; font-weight: bolder;
                         margin: 1em; padding: 0.2em; border-radius: 0.5em; color: green;"></span>
                     </div>     
                     <span>Type: </span>
@@ -135,7 +135,7 @@
                     <br>
                     <button @click="changePrice();
                     setInterval(function(){
-                        if(newPrice != 0){
+                        if(message != ''){
                             newPrice = 0;
                             type = '';
                             message = ''

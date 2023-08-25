@@ -49,7 +49,7 @@ app.post('/api/phoneBill/price', function(req, res) {
     
     res.json({
         status : 'success',
-        message : `The ${type} was set to ${price}` 
+        message : `The ${type} price was set to ${price}` 
     })
 });
 
